@@ -23,19 +23,19 @@ export class HomeComponent {
     // Get the scroll position
     const scrollPosition = scrollElement.scrollTop;
     const {scrollHeight} = scrollElement;
-
-    const newFontSize = Math.min(20, 16 + scrollPosition / 100);
-
-    console.log("SCROLL")
-    // Set the new value to the CSS custom property
-    document.documentElement.style.setProperty('--font-size', `${newFontSize}px`);
-    document.documentElement.style.setProperty('--primary-color', `rgb(${scrollPosition % 255}, 100, 200)`); 
-    document.documentElement.style.setProperty('--card-scroll-position', `calc(50% - ${400+scrollPosition}px)`); 
     const scrollPartSize = scrollHeight/numberOfCards
+
+    console.log("SCROLL", scrollPartSize)
+    // document.documentElement.style.setProperty('--card-scroll-position', `calc(50% - ${400+scrollPosition}px)`); 
     for (let i =0; i< numberOfCards; i++) {
-      const cardsScrollStart = i/numberOfCards * scrollPartSize
-      const cardsScrollEnd = (i+1)/numberOfCards * scrollPartSize
-      let opacityValue = (scrollPosition - cardsScrollStart)/scrollPartSize
+      // set opacity
+      const cardsScrollStart = i * scrollPartSize
+      const cardsScrollEnd = (i+1) * scrollPartSize
+      let opacityValue = (cardsScrollEnd - scrollPosition)/scrollPartSize
+      if (scrollPosition < cardsScrollStart) {
+        opacityValue = (scrollPosition - cardsScrollStart)/1000 + 1
+        console.log("opacityValue", opacityValue)
+      }
       if (opacityValue < 0) {
         opacityValue = 0;
       }
@@ -43,6 +43,13 @@ export class HomeComponent {
         opacityValue = 0;
       }
       document.documentElement.style.setProperty(`--card${i + 1}-opacity`, opacityValue.toString()); 
+
+      // set scale
+      let scaleValue = (scrollPosition - cardsScrollStart)/1000 + 1
+      if (scaleValue < 0) {
+        scaleValue = 1/Math.abs(scaleValue)
+      }
+      document.documentElement.style.setProperty(`--card${i + 1}-scale`, scaleValue.toString());
     }
   }
 }

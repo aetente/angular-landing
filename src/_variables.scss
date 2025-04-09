@@ -10,7 +10,8 @@ $accent2: #BE3D2A;
 }
 
 @mixin card-center {
-  position: absolute;
+  position: fixed;
+  z-index: -1;
   bottom: var(--card-scroll-position);
   background-color: $accent1;
   min-width: 1280px;
