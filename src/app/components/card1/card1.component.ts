@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { CommonModule, NgFor, NgForOf } from '@angular/common';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'card1',
@@ -8,6 +9,8 @@ import { Component } from '@angular/core';
   styleUrl: './card1.component.scss'
 })
 export class Card1Component {
+  @Input() text!: string;
+
   ngOnInit(): void {
     // This is where you'll write your logic to fetch data or initialize properties
     console.log("card1 initialized!");

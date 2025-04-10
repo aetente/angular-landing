@@ -1,6 +1,18 @@
 <div class="home" #scrollContainer (scroll)="onScroll($event)">
-  <div class="cards">
-    <card1 class="card-element card1"></card1 >
-    <card2 class="card-element card2"></card2 >
+  <div class="cards" #cardsContainer>
+    <card1
+      *ngFor="let j of [].constructor(11); let i = index"
+      [class]="'card-element card' + (i + 1)"
+      [text]="'cardText '+ (i+1)"
+      [style.opacity]="'var(--card' + (i + 1) + '-opacity)'"
+      [style.transform]="'scale(var(--card' + (i + 1) + '-scale))'"
+    ></card1 >
+
+
+    <!-- @for (item of items; track item.id; let idx = $index, e = $even) { <p>Item #{{ idx }}: {{ item.name }}</p>} -->
+
+
+
+    <!-- <card2 class="card-element card2"></card2 > -->
   </div>
 </div>
