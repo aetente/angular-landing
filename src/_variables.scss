@@ -14,9 +14,10 @@ $accent2: #BE3D2A;
   z-index: -1;
   bottom: var(--card-scroll-position);
   background-color: $accent1;
-  min-width: 1280px;
+  // min-width: 100vw;
   width: 100%;
-  min-height: 760px;
+  // min-height: 100vh;
+  height: 100%;
   margin: 16px;
   @include flex-center;
 }
