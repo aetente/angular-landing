@@ -1,3 +1,5 @@
+@import '../../../variables';
+
 .home {
   position: fixed;
   overflow: scroll;
@@ -16,14 +18,36 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 16px;
 }
 
 .card1 {
-  opacity: var(--card1-opacity);
-  transform: scale(var(--card1-scale));
+  font-size: var(--font-size);
+  background-color: var(--primary-color);
 }
 
-.card2 {
-  opacity: var(--card2-opacity);
-  transform: scale(var(--card2-scale));
+@mixin card-center {
+  position: fixed;
+  z-index: -1;
+  bottom: var(--card-scroll-position);
+  background-color: $accent1;
+  // min-width: 100vw;
+  // width: 100%;
+  // min-height: 100vh;
+  // height: 100%;
+  // margin: 16px;
+  @include flex-center;
+}
+
+.card-element {
+  font-family: sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  // bottom: 0;
+  transform-origin: 0% -25%;
+  top: 50%;
+  left: 50%;
+  height: fit-content;
+  padding: 16px;
+  @include card-center;
 }

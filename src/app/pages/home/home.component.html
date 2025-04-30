@@ -9,13 +9,20 @@
     >
     gelp
   </card1 > -->
-  <card1
-      [class]="'card-element card'"
-      [style.opacity]="'var(--card1-opacity)'"
-      [style.transform]="'scale(var(--card1-scale))'"
-    >
-    <app-hello></app-hello>
-  </card1 >
+    <card1
+        [class]="'card-element card'"
+        [style.opacity]="'var(--card1-opacity)'"
+        [style.transform]="'scale(var(--card1-scale)) translate(-50%,-50%)'"
+      >
+      <app-hello></app-hello>
+    </card1 >
+    <card1
+        [class]="'card-element card'"
+        [style.opacity]="'var(--card2-opacity)'"
+        [style.transform]="'scale(var(--card2-scale)) translate(-50%,-50%)'"
+      >
+      <app-hello></app-hello>
+    </card1 >
 
 
     <!-- @for (item of items; track item.id; let idx = $index, e = $even) { <p>Item #{{ idx }}: {{ item.name }}</p>} -->
