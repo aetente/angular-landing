@@ -1,0 +1,37 @@
+<div>
+  <h1>Skills</h1>
+
+  <div>
+    <h3>
+      Programming languages
+    </h3>
+    <div class="hold-skills">
+      <div class="skill-box" *ngFor="let lang of languages">
+        {{lang}}
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <h3>
+      WEB
+    </h3>
+    <div class="hold-skills">
+      <div class="skill-box" *ngFor="let skill of webSkills">
+        {{skill}}
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <h3>
+      Miscellaneous
+    </h3>
+    <div class="hold-skills">
+      <div class="skill-box" *ngFor="let misc of miscellaneous">
+        {{misc}}
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,13 @@
+.hold-contacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem
+}
+
+.contact-box {
+  background-color: var(--accent2);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  z-index: 1000;
+}

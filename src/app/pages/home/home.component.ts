@@ -1,10 +1,12 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { Card1Component } from '../../components/card1/card1.component';
 import { HelloComponent } from '../../hello/hello.component';
+import { SkillsComponent } from '../../skills/skills.component';
+import { ContactsComponent } from '../../contacts/contacts.component';
 
 @Component({
   selector: 'app-home',
-  imports: [Card1Component, HelloComponent],
+  imports: [Card1Component, HelloComponent, SkillsComponent, ContactsComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
